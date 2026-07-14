@@ -1,41 +1,75 @@
+"use client";
+import { motion } from "framer-motion";
+
 const steps = [
   {
     num: "01",
-    title: "Оставь заявку",
-    desc: "Выбери тариф или настройку под ключ. Укажи имя и Telegram — свяжемся за 15 минут.",
+    title: "Выбери вариант",
+    desc: "Подписка — если нужно быстро и недорого. Личный сервер — если важна максимальная приватность и безлимит устройств.",
   },
   {
     num: "02",
-    title: "Настройка за час",
-    desc: "Подключаем тебя к серверу или разворачиваем твой VPS. Пришлём готовые конфиги для всех устройств.",
+    title: "Оставь заявку",
+    desc: "Укажи имя и Telegram в форме ниже. Ответим в течение 15 минут и уточним детали.",
   },
   {
     num: "03",
-    title: "Работает везде",
-    desc: "iPhone, Android, Windows, Mac, роутер. Один клик — и ты подключён. Блокировок больше нет.",
+    title: "Готово к работе",
+    desc: "Пришлём инструкции по подключению для каждого твоего устройства. Поможем если что-то пойдёт не так.",
   },
 ];
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-20 bg-slate-800">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Как это работает</h2>
-          <p className="text-blue-200/70 text-lg">Три шага до стабильного интернета без ограничений.</p>
+    <section id="how-it-works" className="bg-[#f8fafc] py-20">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="mb-12">
+          <span
+            className="text-xs font-medium text-[#EA580C] uppercase tracking-widest mb-3 block"
+            style={{ fontFamily: "var(--font-mono)" }}
+          >
+            // как это работает
+          </span>
+          <h2
+            className="text-4xl md:text-5xl font-black text-slate-900 uppercase tracking-tight"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
+            Три шага до свободы
+          </h2>
         </div>
-        <div className="grid md:grid-cols-3 gap-8">
-          {steps.map((s, i) => (
-            <div key={s.num} className="relative">
-              {i < steps.length - 1 && (
-                <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-blue-500/20 -translate-x-1/2 z-0" />
-              )}
-              <div className="relative z-10">
-                <div className="text-5xl font-black text-blue-500/20 mb-2 leading-none">{s.num}</div>
-                <h3 className="text-xl font-bold text-white mb-3">{s.title}</h3>
-                <p className="text-blue-200/60 leading-relaxed">{s.desc}</p>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          {steps.map(({ num, title, desc }, i) => (
+            <motion.div
+              key={num}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.12, duration: 0.5 }}
+              className="relative bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow p-8 md:p-10 overflow-hidden group"
+            >
+              <div
+                className="absolute bottom-0 right-0 text-[100px] font-black text-slate-100 leading-none select-none pointer-events-none translate-x-4 translate-y-4 group-hover:text-[#EA580C]/10 transition-colors"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                {num}
               </div>
-            </div>
+              <div className="relative">
+                <div
+                  className="text-3xl font-black text-[#EA580C] mb-5"
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
+                  {num}
+                </div>
+                <h3
+                  className="text-2xl font-black text-slate-900 uppercase tracking-tight mb-3"
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
+                  {title}
+                </h3>
+                <p className="text-slate-500 text-sm leading-relaxed">{desc}</p>
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>

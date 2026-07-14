@@ -17,12 +17,20 @@ export default function OrderForm() {
   const [telegramId, setTelegramId] = useState<string | null>(null);
   const [status, setStatus] = useState<"idle" | "loading" | "done" | "error">("idle");
   const [botUrl, setBotUrl] = useState<string | null>(null);
+  const [utm, setUtm] = useState<{ utm_source?: string; utm_medium?: string; utm_campaign?: string; utm_content?: string }>({});
 
-  // Читаем tg_id из URL — пользователь пришёл с кнопки в боте
+  // Читаем tg_id и utm-метки из URL — пользователь пришёл с кнопки в боте или из рекламы
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const tgId = params.get("tg_id");
     if (tgId) setTelegramId(tgId);
+
+    setUtm({
+      utm_source: params.get("utm_source") ?? undefined,
+      utm_medium: params.get("utm_medium") ?? undefined,
+      utm_campaign: params.get("utm_campaign") ?? undefined,
+      utm_content: params.get("utm_content") ?? undefined,
+    });
   }, []);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -36,6 +44,7 @@ export default function OrderForm() {
           ...form,
           service,
           telegram_id: telegramId ? Number(telegramId) : null,
+          ...utm,
         }),
       });
       const data = await res.json();
