@@ -9,36 +9,36 @@ const steps = [
   },
   {
     num: "02",
-    title: "Оставь заявку",
-    desc: "Укажи имя и Telegram в форме ниже. Ответим в течение 15 минут и уточним детали.",
+    title: "Напиши боту",
+    desc: "Открой @wireguard_easy_buy_bot в Telegram, выбери тариф и оплати — займёт пару минут.",
   },
   {
     num: "03",
     title: "Готово к работе",
-    desc: "Пришлём инструкции по подключению для каждого твоего устройства. Поможем если что-то пойдёт не так.",
+    desc: "Бот пришлёт инструкции по подключению для каждого твоего устройства сразу после оплаты.",
   },
 ];
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="bg-[#f8fafc] py-20">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <section id="how-it-works" className="bg-[#EAE3D2] py-24 px-6">
+      <div className="max-w-[1280px] mx-auto">
         <div className="mb-12">
           <span
-            className="text-xs font-medium text-[#EA580C] uppercase tracking-widest mb-3 block"
+            className="text-xs text-[#A17B12] uppercase tracking-[0.1em] mb-3 block"
             style={{ fontFamily: "var(--font-mono)" }}
           >
             // как это работает
           </span>
           <h2
-            className="text-4xl md:text-5xl font-black text-slate-900 uppercase tracking-tight"
+            className="text-[clamp(30px,4.2vw,42px)] font-bold tracking-[-0.02em] text-[#1C1A16]"
             style={{ fontFamily: "var(--font-display)" }}
           >
             Три шага до свободы
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-5">
           {steps.map(({ num, title, desc }, i) => (
             <motion.div
               key={num}
@@ -46,28 +46,25 @@ export default function HowItWorks() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.12, duration: 0.5 }}
-              className="relative bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow p-8 md:p-10 overflow-hidden group"
+              className="relative bg-white rounded-[10px] border border-[#1C1A16]/[0.09] p-10 overflow-hidden"
             >
               <div
-                className="absolute bottom-0 right-0 text-[100px] font-black text-slate-100 leading-none select-none pointer-events-none translate-x-4 translate-y-4 group-hover:text-[#EA580C]/10 transition-colors"
+                className="absolute bottom-[-14px] right-[-6px] text-[96px] font-bold text-[#1C1A16]/[0.05] leading-none select-none pointer-events-none"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 {num}
               </div>
               <div className="relative">
-                <div
-                  className="text-3xl font-black text-[#EA580C] mb-5"
-                  style={{ fontFamily: "var(--font-display)" }}
-                >
+                <div className="font-bold text-[25px] text-[#A17B12] mb-5" style={{ fontFamily: "var(--font-display)" }}>
                   {num}
                 </div>
                 <h3
-                  className="text-2xl font-black text-slate-900 uppercase tracking-tight mb-3"
+                  className="font-bold text-[21px] tracking-[-0.01em] text-[#1C1A16] mb-2.5"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   {title}
                 </h3>
-                <p className="text-slate-500 text-sm leading-relaxed">{desc}</p>
+                <p className="text-[#6B6152] text-sm leading-relaxed">{desc}</p>
               </div>
             </motion.div>
           ))}

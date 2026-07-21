@@ -13,7 +13,7 @@ const groups = [
       },
       {
         q: "Можно ли отменить подписку?",
-        a: "Да, в любой момент. Доступ сохраняется до конца оплаченного периода. Деньги за остаток не возвращаем.",
+        a: "Да, в любой момент прямо в боте. Доступ сохраняется до конца оплаченного периода.",
       },
     ],
   },
@@ -22,11 +22,11 @@ const groups = [
     faqs: [
       {
         q: "Чем личный сервер лучше подписки?",
-        a: "По подписке ты пользуешься общим сервером — быстро и дёшево, но сервер делишь с другими. Личный сервер — только для тебя: полный контроль, никаких соседей, безлимит устройств.",
+        a: "По подписке ты пользуешься общим сервером — быстро и дёшево, но сервер делишь с другими. Личный сервер — только для тебя: полный контроль, безлимит устройств.",
       },
       {
-        q: "Нужны ли технические знания для личного сервера?",
-        a: "Нет. Ты говоришь нам страну и бюджет — мы настраиваем всё сами. После этого пришлём понятные инструкции для каждого устройства.",
+        q: "Нужны ли технические знания?",
+        a: "Нет. Ты говоришь боту страну и бюджет — мы настраиваем всё сами и присылаем понятные инструкции.",
       },
     ],
   },
@@ -35,11 +35,11 @@ const groups = [
     faqs: [
       {
         q: "Как оплатить?",
-        a: "Принимаем карты РФ и BY, USDT, а также другие криптовалюты. Для подписки — автопродление, отменить можно в любой момент.",
+        a: "Прямо в Telegram-боте: карты РФ/BY, USDT, другие криптовалюты.",
       },
       {
-        q: "Что будет, если сервер упадёт?",
-        a: "По подписке — автоматически переключаем на резервный сервер в течение 15 минут. Для личного сервера — помогаем восстановить, поддержка в Telegram 24/7.",
+        q: "Что если сервер упадёт?",
+        a: "По подписке бот автоматически переключит на резервный сервер. Для личного сервера — поддержка в Telegram 24/7.",
       },
     ],
   },
@@ -49,17 +49,17 @@ export default function FAQ() {
   const [open, setOpen] = useState<string | null>(null);
 
   return (
-    <section id="faq" className="bg-white py-20">
-      <div className="max-w-3xl mx-auto px-6 md:px-12">
+    <section id="faq" className="bg-[#F3EFE4] py-24 px-6">
+      <div className="max-w-[760px] mx-auto">
         <div className="mb-12">
           <span
-            className="text-xs font-medium text-[#EA580C] uppercase tracking-widest mb-3 block"
+            className="text-xs text-[#A17B12] uppercase tracking-[0.1em] mb-3 block"
             style={{ fontFamily: "var(--font-mono)" }}
           >
             // частые вопросы
           </span>
           <h2
-            className="text-4xl md:text-5xl font-black text-slate-900 uppercase tracking-tight"
+            className="text-[clamp(30px,4.2vw,42px)] font-bold tracking-[-0.02em] text-[#1C1A16]"
             style={{ fontFamily: "var(--font-display)" }}
           >
             FAQ
@@ -69,7 +69,10 @@ export default function FAQ() {
         <div className="space-y-8">
           {groups.map(({ label, faqs }) => (
             <div key={label}>
-              <div className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3 px-1" style={{ fontFamily: "var(--font-mono)" }}>
+              <div
+                className="text-[11px] font-semibold text-[#9C927D] uppercase tracking-[0.1em] mb-3 px-1"
+                style={{ fontFamily: "var(--font-mono)" }}
+              >
                 {label}
               </div>
               <div className="space-y-2">
@@ -81,15 +84,15 @@ export default function FAQ() {
                       initial={{ opacity: 0, y: 8 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
-                      className="rounded-xl border border-slate-200 overflow-hidden bg-white"
+                      className="rounded-[10px] border border-[#1C1A16]/[0.12] overflow-hidden bg-white"
                     >
                       <button
                         onClick={() => setOpen(open === key ? null : key)}
-                        className="w-full flex justify-between items-center px-6 py-5 text-left hover:bg-slate-50 transition-colors"
+                        className="w-full flex justify-between items-center px-[22px] py-[18px] text-left"
                       >
-                        <span className="font-bold text-slate-900 pr-4 text-base">{faq.q}</span>
-                        <span className="flex-shrink-0 text-slate-400">
-                          {open === key ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5 text-[#EA580C]" />}
+                        <span className="font-bold text-[#1C1A16] pr-4 text-[15px]">{faq.q}</span>
+                        <span className="shrink-0 text-[#9C927D]">
+                          {open === key ? <Minus className="w-[18px] h-[18px]" /> : <Plus className="w-[18px] h-[18px] text-[#A17B12]" />}
                         </span>
                       </button>
                       <AnimatePresence initial={false}>
@@ -101,7 +104,9 @@ export default function FAQ() {
                             transition={{ duration: 0.25 }}
                             className="overflow-hidden"
                           >
-                            <p className="px-6 pb-5 text-slate-500 text-sm leading-relaxed border-t border-slate-100 pt-4">{faq.a}</p>
+                            <p className="px-[22px] pb-5 text-[#6B6152] text-sm leading-relaxed border-t border-[#1C1A16]/[0.06] pt-3.5">
+                              {faq.a}
+                            </p>
                           </motion.div>
                         )}
                       </AnimatePresence>
