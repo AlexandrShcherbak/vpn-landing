@@ -44,17 +44,17 @@ export default function FAQ() {
   const [open, setOpen] = useState<string | null>(null);
 
   return (
-    <section id="faq" className="bg-[#F3EFE4] py-24 px-6">
+    <section id="faq" className="bg-[#EAF3FB] py-24 px-6">
       <div className="max-w-[760px] mx-auto">
         <div className="mb-12">
           <span
-            className="text-xs text-[#A17B12] uppercase tracking-[0.1em] mb-3 block"
+            className="text-xs text-[#2E63C7] uppercase tracking-[0.1em] mb-3 block"
             style={{ fontFamily: "var(--font-mono)" }}
           >
             // частые вопросы
           </span>
           <h2
-            className="text-[clamp(30px,4.2vw,42px)] font-bold tracking-[-0.02em] text-[#1C1A16]"
+            className="text-[clamp(30px,4.2vw,42px)] font-bold tracking-[-0.02em] text-[#071019]"
             style={{ fontFamily: "var(--font-display)" }}
           >
             FAQ
@@ -65,7 +65,7 @@ export default function FAQ() {
           {groups.map(({ label, faqs }) => (
             <div key={label}>
               <div
-                className="text-[11px] font-semibold text-[#9C927D] uppercase tracking-[0.1em] mb-3 px-1"
+                className="text-[11px] font-semibold text-[#6E879C] uppercase tracking-[0.1em] mb-3 px-1"
                 style={{ fontFamily: "var(--font-mono)" }}
               >
                 {label}
@@ -79,15 +79,15 @@ export default function FAQ() {
                       initial={{ opacity: 0, y: 8 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
-                      className="rounded-[10px] border border-[#1C1A16]/[0.12] overflow-hidden bg-white"
+                      className="rounded-[10px] border border-[#071019]/[0.12] overflow-hidden bg-white"
                     >
                       <button
                         onClick={() => setOpen(open === key ? null : key)}
                         className="w-full flex justify-between items-center px-[22px] py-[18px] text-left"
                       >
-                        <span className="font-bold text-[#1C1A16] pr-4 text-[15px]">{faq.q}</span>
-                        <span className="shrink-0 text-[#9C927D]">
-                          {open === key ? <Minus className="w-[18px] h-[18px]" /> : <Plus className="w-[18px] h-[18px] text-[#A17B12]" />}
+                        <span className="font-bold text-[#071019] pr-4 text-[15px]">{faq.q}</span>
+                        <span className="shrink-0 text-[#6E879C]">
+                          {open === key ? <Minus className="w-[18px] h-[18px]" /> : <Plus className="w-[18px] h-[18px] text-[#2E63C7]" />}
                         </span>
                       </button>
                       <AnimatePresence initial={false}>
@@ -99,7 +99,7 @@ export default function FAQ() {
                             transition={{ duration: 0.25 }}
                             className="overflow-hidden"
                           >
-                            <p className="px-[22px] pb-5 text-[#6B6152] text-sm leading-relaxed border-t border-[#1C1A16]/[0.06] pt-3.5">
+                            <p className="px-[22px] pb-5 text-[#4C6478] text-sm leading-relaxed border-t border-[#071019]/[0.06] pt-3.5">
                               {faq.a}
                             </p>
                           </motion.div>

@@ -21,17 +21,17 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="bg-[#EAE3D2] py-24 px-6">
+    <section id="how-it-works" className="bg-[#E1EDF7] py-24 px-6">
       <div className="max-w-[1280px] mx-auto">
         <div className="mb-12">
           <span
-            className="text-xs text-[#A17B12] uppercase tracking-[0.1em] mb-3 block"
+            className="text-xs text-[#2E63C7] uppercase tracking-[0.1em] mb-3 block"
             style={{ fontFamily: "var(--font-mono)" }}
           >
             // как это работает
           </span>
           <h2
-            className="text-[clamp(30px,4.2vw,42px)] font-bold tracking-[-0.02em] text-[#1C1A16]"
+            className="text-[clamp(30px,4.2vw,42px)] font-bold tracking-[-0.02em] text-[#071019]"
             style={{ fontFamily: "var(--font-display)" }}
           >
             Три шага до свободы
@@ -46,25 +46,25 @@ export default function HowItWorks() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.12, duration: 0.5 }}
-              className="relative bg-white rounded-[10px] border border-[#1C1A16]/[0.09] p-10 overflow-hidden"
+              className="relative bg-white rounded-[10px] border border-[#071019]/[0.09] p-10 overflow-hidden"
             >
               <div
-                className="absolute bottom-[-14px] right-[-6px] text-[96px] font-bold text-[#1C1A16]/[0.05] leading-none select-none pointer-events-none"
+                className="absolute bottom-[-14px] right-[-6px] text-[96px] font-bold text-[#071019]/[0.05] leading-none select-none pointer-events-none"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 {num}
               </div>
               <div className="relative">
-                <div className="font-bold text-[25px] text-[#A17B12] mb-5" style={{ fontFamily: "var(--font-display)" }}>
+                <div className="font-bold text-[25px] text-[#2E63C7] mb-5" style={{ fontFamily: "var(--font-display)" }}>
                   {num}
                 </div>
                 <h3
-                  className="font-bold text-[21px] tracking-[-0.01em] text-[#1C1A16] mb-2.5"
+                  className="font-bold text-[21px] tracking-[-0.01em] text-[#071019] mb-2.5"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   {title}
                 </h3>
-                <p className="text-[#6B6152] text-sm leading-relaxed">{desc}</p>
+                <p className="text-[#4C6478] text-sm leading-relaxed">{desc}</p>
               </div>
             </motion.div>
           ))}

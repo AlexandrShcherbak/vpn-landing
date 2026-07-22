@@ -16,8 +16,8 @@ export default function Home() {
       <HowItWorks />
       <FAQ />
       <FinalCTA />
-      <footer className="bg-[#1C2027] border-t border-[#F3EFE4]/[0.08] py-8 px-6 text-center">
-        <span className="text-[13px] text-[#6E7280]" style={{ fontFamily: "var(--font-mono)" }}>
+      <footer className="bg-[#060B16] border-t border-[#F3EFE4]/[0.08] py-8 px-6 text-center">
+        <span className="text-[13px] text-[#5B7284]" style={{ fontFamily: "var(--font-mono)" }}>
           © {new Date().getFullYear()} VPN Сервис. Все права защищены.
         </span>
       </footer>

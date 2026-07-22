@@ -6,7 +6,24 @@ const botLink = process.env.NEXT_PUBLIC_BOT_URL || "https://telegram.me/wireguar
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen bg-[#1C2027] flex flex-col justify-between overflow-hidden pt-[68px]">
+    <section className="relative min-h-screen bg-[#060B16] flex flex-col justify-between overflow-hidden pt-[68px]">
+      {/* Animated gradient blobs */}
+      <div
+        className="absolute -top-40 -left-24 w-[480px] h-[480px] rounded-full pointer-events-none"
+        style={{
+          background: "radial-gradient(circle, rgba(62,142,247,0.28), transparent 70%)",
+          filter: "blur(10px)",
+          animation: "drift1 14s ease-in-out infinite",
+        }}
+      />
+      <div
+        className="absolute -bottom-44 -right-28 w-[520px] h-[520px] rounded-full pointer-events-none"
+        style={{
+          background: "radial-gradient(circle, rgba(124,179,255,0.2), transparent 70%)",
+          filter: "blur(10px)",
+          animation: "drift2 17s ease-in-out infinite",
+        }}
+      />
       {/* Grid background */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -25,10 +42,10 @@ export default function Hero() {
           className="mb-8"
         >
           <span
-            className="inline-flex items-center gap-2 text-xs bg-[#D4A72C]/10 text-[#E3BE5C] border border-[#D4A72C]/30 px-3.5 py-1.5 rounded-full w-fit"
+            className="inline-flex items-center gap-2 text-xs bg-[#3E8EF7]/[0.12] text-[#7CB3FF] border border-[#3E8EF7]/30 px-3.5 py-1.5 rounded-full w-fit"
             style={{ fontFamily: "var(--font-mono)" }}
           >
-            <span className="w-1.5 h-1.5 bg-[#E3BE5C] rounded-full" />
+            <span className="w-1.5 h-1.5 bg-[#7CB3FF] rounded-full" style={{ animation: "pulseDot 2s ease-in-out infinite" }} />
             Серверы работают · Подключение от 15 минут
           </span>
         </motion.div>
@@ -38,7 +55,7 @@ export default function Hero() {
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
-            className="text-[clamp(38px,6.8vw,86px)] font-extrabold leading-[1.0] tracking-[-0.03em] text-[#F3EFE4] m-0"
+            className="text-[clamp(38px,6.8vw,86px)] font-extrabold leading-[1.0] tracking-[-0.03em] text-[#EAF3FB] m-0"
             style={{ fontFamily: "var(--font-display)" }}
           >
             Интернет без границ,
@@ -49,7 +66,7 @@ export default function Hero() {
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             transition={{ duration: 0.7, delay: 0.07, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
-            className="text-[clamp(38px,6.8vw,86px)] font-extrabold leading-[1.0] tracking-[-0.03em] text-[#D4A72C] m-0"
+            className="text-[clamp(38px,6.8vw,86px)] font-extrabold leading-[1.0] tracking-[-0.03em] text-[#3E8EF7] m-0"
             style={{ fontFamily: "var(--font-display)" }}
           >
             без слежки.
@@ -60,7 +77,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className="max-w-[520px] text-[#A9AEB6] text-lg leading-relaxed mb-10"
+          className="max-w-[520px] text-[#9FB4C6] text-lg leading-relaxed mb-10"
         >
           Готовый VPN под ключ — без настроек и танцев с бубном. Подключись за 10 минут
           и открой YouTube, Instagram и любой заблокированный сайт.
@@ -76,14 +93,14 @@ export default function Hero() {
             href={botLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2.5 bg-[#D4A72C] text-[#1C1A16] font-bold px-8 py-4 rounded-[10px] text-[15px] uppercase tracking-[0.04em] no-underline"
+            className="group inline-flex items-center gap-2.5 bg-[#3E8EF7] text-[#071019] font-bold px-8 py-4 rounded-[10px] text-[15px] uppercase tracking-[0.04em] no-underline"
           >
             Подключить за 490₽/мес
             <ArrowRight className="w-[18px] h-[18px] group-hover:translate-x-1 transition-transform" />
           </a>
           <a
             href="#subscription"
-            className="inline-flex items-center gap-2 text-[#C4C8CE] font-medium px-5 py-4 text-[15px] no-underline hover:text-[#F3EFE4] transition-colors"
+            className="inline-flex items-center gap-2 text-[#C7D9E6] font-medium px-5 py-4 text-[15px] no-underline hover:text-[#EAF3FB] transition-colors"
           >
             Смотреть все тарифы
           </a>
@@ -100,8 +117,8 @@ export default function Hero() {
             { icon: Users, text: "До 5 устройств" },
             { icon: Globe, text: "Серверы в 10+ странах" },
           ].map(({ icon: Icon, text }) => (
-            <div key={text} className="flex items-center gap-2 text-[13px] text-[#A9AEB6]">
-              <Icon className="w-4 h-4 text-[#D4A72C]" />
+            <div key={text} className="flex items-center gap-2 text-[13px] text-[#9FB4C6]">
+              <Icon className="w-4 h-4 text-[#3E8EF7]" />
               {text}
             </div>
           ))}
@@ -120,10 +137,10 @@ export default function Hero() {
           { value: "10+", label: "стран серверов" },
         ].map(({ value, label }, i) => (
           <div key={label} className={`px-6 py-6 ${i < 2 ? "border-r border-[#F3EFE4]/[0.08]" : ""}`}>
-            <div className="font-bold text-3xl text-[#F3EFE4]" style={{ fontFamily: "var(--font-display)" }}>
+            <div className="font-bold text-3xl text-[#EAF3FB]" style={{ fontFamily: "var(--font-display)" }}>
               {value}
             </div>
-            <div className="text-[11px] text-[#6E7280] uppercase tracking-[0.1em] mt-1" style={{ fontFamily: "var(--font-mono)" }}>
+            <div className="text-[11px] text-[#5B7284] uppercase tracking-[0.1em] mt-1" style={{ fontFamily: "var(--font-mono)" }}>
               {label}
             </div>
           </div>

@@ -8,18 +8,31 @@
 
 body {
   font-family: var(--font-body);
-  background: #F3EFE4;
-  color: #1C1A16;
+  background: #EAF3FB;
+  color: #071019;
 }
 
 ::selection {
-  background: #D4A72C;
-  color: #1C1A16;
+  background: #3E8EF7;
+  color: #071019;
 }
 
 a {
-  color: #1C1A16;
+  color: #071019;
 }
 a:hover {
-  color: #6B6152;
+  color: #4C6478;
+}
+
+@keyframes drift1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(60px, -40px) scale(1.15); }
+}
+@keyframes drift2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-50px, 50px) scale(1.1); }
+}
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(124, 179, 255, 0.5); }
+  50% { opacity: 0.6; box-shadow: 0 0 0 6px rgba(124, 179, 255, 0); }
 }
