@@ -13,8 +13,8 @@ export default function Navbar() {
           </span>
         </a>
         <div className="hidden md:flex items-center gap-8">
-          <a href="#subscription" className="text-[#9BA0AB] text-sm font-medium no-underline">Подписка</a>
-          <a href="#personal-server" className="text-[#9BA0AB] text-sm font-medium no-underline">Личный сервер</a>
+          <a href="#subscription" className="text-[#9BA0AB] text-sm font-medium no-underline">Тарифы</a>
+          <a href="#how-it-works" className="text-[#9BA0AB] text-sm font-medium no-underline">Как это работает</a>
           <a href="#faq" className="text-[#9BA0AB] text-sm font-medium no-underline">FAQ</a>
         </div>
         <a

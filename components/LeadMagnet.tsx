@@ -1,3 +1,6 @@
+const botLink = process.env.NEXT_PUBLIC_BOT_URL || "https://telegram.me/wireguard_easy_buy_bot";
+const leadMagnetLink = `${botLink}?start=leadmagnet`;
+
 export default function LeadMagnet() {
   return (
     <section className="bg-[#1C2027] py-14 px-6">
@@ -12,17 +15,21 @@ export default function LeadMagnet() {
             <div className="text-[11px] text-[#E3BE5C] uppercase tracking-[0.1em] mb-1.5" style={{ fontFamily: "var(--font-mono)" }}>
               Бесплатный гайд
             </div>
-            <div className="font-bold text-[22px] text-[#F3EFE4]" style={{ fontFamily: "var(--font-display)" }}>
-              Как запустить свой VPN за 24 часа
+            <div className="font-bold text-[22px] text-[#F3EFE4] leading-tight" style={{ fontFamily: "var(--font-display)" }}>
+              Почему бесплатный VPN сливает твои данные
+            </div>
+            <div className="text-[13px] text-[#A9AEB6] mt-1.5">
+              И что поставить вместо него — заберёшь гайд прямо в боте.
             </div>
           </div>
         </div>
         <a
-          href="/assets/vpn-guide.pdf"
-          download
+          href={leadMagnetLink}
+          target="_blank"
+          rel="noopener noreferrer"
           className="shrink-0 flex items-center gap-2 bg-[#D4A72C] text-[#1C1A16] font-bold px-6 py-3.5 rounded-lg text-[13px] uppercase tracking-[0.05em] no-underline whitespace-nowrap"
         >
-          Скачать PDF бесплатно
+          Получить гайд в боте
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1C1A16" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M5 12h14M13 6l6 6-6 6" />
           </svg>

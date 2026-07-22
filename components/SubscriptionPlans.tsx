@@ -151,7 +151,7 @@ export default function SubscriptionPlans() {
         </div>
 
         <p className="text-center text-[#9C927D] text-[13px] mt-8">
-          Оплата: карта РФ/BY · USDT · Крипто · Автопродление, отмена в любой момент
+          Оплата прямо в Telegram-боте · без автосписаний · продлеваешь когда удобно
         </p>
       </div>
     </section>

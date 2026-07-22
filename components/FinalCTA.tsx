@@ -30,7 +30,7 @@ export default function FinalCTA() {
           </svg>
           Открыть @wireguard_easy_buy_bot
         </a>
-        <p className="text-[#6E7280] text-[13px] mt-5">Оплата: карта РФ/BY · USDT · Крипто</p>
+        <p className="text-[#6E7280] text-[13px] mt-5">Оплата прямо в боте по реквизитам · без автосписаний</p>
       </div>
     </section>
   );

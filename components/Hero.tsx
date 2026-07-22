@@ -1,6 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
-import { ArrowRight, Clock, Users, Server, Lock } from "lucide-react";
+import { ArrowRight, Clock, Users, Globe } from "lucide-react";
+
+const botLink = process.env.NEXT_PUBLIC_BOT_URL || "https://telegram.me/wireguard_easy_buy_bot";
 
 export default function Hero() {
   return (
@@ -58,68 +60,51 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className="max-w-[480px] text-[#A9AEB6] text-lg leading-relaxed mb-10"
+          className="max-w-[520px] text-[#A9AEB6] text-lg leading-relaxed mb-10"
         >
-          Два способа выйти за рамки блокировок. Выбери то, что подходит именно тебе.
+          Готовый VPN под ключ — без настроек и танцев с бубном. Подключись за 10 минут
+          и открой YouTube, Instagram и любой заблокированный сайт.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.6 }}
-          className="grid grid-cols-2 gap-4 max-w-[640px]"
+          className="flex flex-col sm:flex-row items-start sm:items-center gap-4"
         >
           <a
-            href="#subscription"
-            className="relative bg-[#F3EFE4]/[0.04] hover:bg-[#F3EFE4]/[0.07] border border-[#F3EFE4]/10 rounded-[10px] p-6 no-underline transition-colors block"
+            href={botLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2.5 bg-[#D4A72C] text-[#1C1A16] font-bold px-8 py-4 rounded-[10px] text-[15px] uppercase tracking-[0.04em] no-underline"
           >
-            <div className="flex items-center justify-between mb-4">
-              <span className="text-[11px] text-[#8B909A] uppercase tracking-[0.1em]" style={{ fontFamily: "var(--font-mono)" }}>
-                Подписка
-              </span>
-              <ArrowRight className="w-4 h-4 text-[#8B909A]" />
-            </div>
-            <div className="font-bold text-[27px] text-[#F3EFE4] mb-3" style={{ fontFamily: "var(--font-display)" }}>
-              от 490₽/мес
-            </div>
-            <div className="space-y-1.5">
-              {[
-                { icon: Clock, text: "Готово за 10 минут" },
-                { icon: Users, text: "До 5 устройств" },
-              ].map(({ icon: Icon, text }) => (
-                <div key={text} className="flex items-center gap-2 text-[13px] text-[#C4C8CE]">
-                  <Icon className="w-3.5 h-3.5 text-[#D4A72C]" />
-                  {text}
-                </div>
-              ))}
-            </div>
+            Подключить за 490₽/мес
+            <ArrowRight className="w-[18px] h-[18px] group-hover:translate-x-1 transition-transform" />
           </a>
-
           <a
-            href="#personal-server"
-            className="relative bg-[#D4A72C]/10 hover:bg-[#D4A72C]/[0.14] border border-[#D4A72C]/35 rounded-[10px] p-6 no-underline transition-colors block"
+            href="#subscription"
+            className="inline-flex items-center gap-2 text-[#C4C8CE] font-medium px-5 py-4 text-[15px] no-underline hover:text-[#F3EFE4] transition-colors"
           >
-            <div className="flex items-center justify-between mb-4">
-              <span className="text-[11px] text-[#E3BE5C] uppercase tracking-[0.1em]" style={{ fontFamily: "var(--font-mono)" }}>
-                Личный сервер
-              </span>
-              <ArrowRight className="w-4 h-4 text-[#E3BE5C]" />
-            </div>
-            <div className="font-bold text-[27px] text-[#F3EFE4] mb-3" style={{ fontFamily: "var(--font-display)" }}>
-              от 4 990₽
-            </div>
-            <div className="space-y-1.5">
-              {[
-                { icon: Server, text: "Только ты, никто другой" },
-                { icon: Lock, text: "Безлимит устройств" },
-              ].map(({ icon: Icon, text }) => (
-                <div key={text} className="flex items-center gap-2 text-[13px] text-[#E5DFC9]">
-                  <Icon className="w-3.5 h-3.5 text-[#E3BE5C]" />
-                  {text}
-                </div>
-              ))}
-            </div>
+            Смотреть все тарифы
           </a>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.7, duration: 0.6 }}
+          className="flex flex-wrap gap-x-7 gap-y-2.5 mt-8"
+        >
+          {[
+            { icon: Clock, text: "Готово за 10 минут" },
+            { icon: Users, text: "До 5 устройств" },
+            { icon: Globe, text: "Серверы в 10+ странах" },
+          ].map(({ icon: Icon, text }) => (
+            <div key={text} className="flex items-center gap-2 text-[13px] text-[#A9AEB6]">
+              <Icon className="w-4 h-4 text-[#D4A72C]" />
+              {text}
+            </div>
+          ))}
         </motion.div>
       </div>
 

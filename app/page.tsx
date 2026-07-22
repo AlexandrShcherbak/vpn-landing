@@ -2,7 +2,6 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import LeadMagnet from "@/components/LeadMagnet";
 import SubscriptionPlans from "@/components/SubscriptionPlans";
-import PersonalServer from "@/components/PersonalServer";
 import HowItWorks from "@/components/HowItWorks";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
@@ -14,7 +13,6 @@ export default function Home() {
       <Hero />
       <LeadMagnet />
       <SubscriptionPlans />
-      <PersonalServer />
       <HowItWorks />
       <FAQ />
       <FinalCTA />
