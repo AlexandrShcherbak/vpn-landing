@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { ArrowRight, Clock, Users, Globe } from "lucide-react";
+import { ArrowRight, Clock, Lock, Globe } from "lucide-react";
 
 const botLink = process.env.NEXT_PUBLIC_BOT_URL || "https://telegram.me/wireguard_easy_buy_bot";
 
@@ -95,14 +95,14 @@ export default function Hero() {
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-2.5 bg-[#3E8EF7] text-[#071019] font-bold px-8 py-4 rounded-[10px] text-[15px] uppercase tracking-[0.04em] no-underline"
           >
-            Подключить за 490₽/мес
+            Подключить за 600₽ / 6 мес
             <ArrowRight className="w-[18px] h-[18px] group-hover:translate-x-1 transition-transform" />
           </a>
           <a
             href="#subscription"
             className="inline-flex items-center gap-2 text-[#C7D9E6] font-medium px-5 py-4 text-[15px] no-underline hover:text-[#EAF3FB] transition-colors"
           >
-            Смотреть все тарифы
+            Подробнее о тарифе
           </a>
         </motion.div>
 
@@ -114,8 +114,8 @@ export default function Hero() {
         >
           {[
             { icon: Clock, text: "Готово за 10 минут" },
-            { icon: Users, text: "До 5 устройств" },
             { icon: Globe, text: "Серверы в 10+ странах" },
+            { icon: Lock, text: "Без логов данных" },
           ].map(({ icon: Icon, text }) => (
             <div key={text} className="flex items-center gap-2 text-[13px] text-[#9FB4C6]">
               <Icon className="w-4 h-4 text-[#3E8EF7]" />
