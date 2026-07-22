@@ -5,18 +5,8 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[#1C2027]/94 backdrop-blur-md border-b border-[#F3EFE4]/[0.08]">
       <div className="max-w-[1280px] mx-auto px-6 h-[68px] flex items-center justify-between">
         <a href="#" className="flex items-center gap-2.5 no-underline">
-          <svg width="30" height="30" viewBox="0 0 32 32" fill="none" className="shrink-0">
-            <path
-              d="M9 27 C 4 22 8 16 14 16 C 20 16 23 11 19 6"
-              stroke="#3E8EF7"
-              strokeWidth="2.8"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <circle cx="18.6" cy="6.3" r="2.5" fill="#3E8EF7" />
-            <circle cx="19.4" cy="5.6" r="0.7" fill="#0A1420" />
-            <path d="M16.8 4.4 L 14.2 3 M17 5.2 L 14.4 5" stroke="#3E8EF7" strokeWidth="1.4" strokeLinecap="round" />
-          </svg>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/assets/logo.png" alt="VPN Сервис" className="w-9 h-9 rounded-lg object-cover" />
           <span className="text-[#EAF3FB] font-bold text-[19px] tracking-[-0.02em]" style={{ fontFamily: "var(--font-display)" }}>
             VPN <span className="text-[#3E8EF7]">Сервис</span>
           </span>
